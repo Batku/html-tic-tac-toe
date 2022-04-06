@@ -1,0 +1,207 @@
+body{
+    background-color: black;
+}
+
+td {
+    border: 2px solid gray;
+    color:white;
+    font-size: 8vw;
+    text-align: center;
+    vertical-align: middle;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 0.1em;
+}
+.right{
+    border-right: none;
+}
+.left{
+    border-left: none;
+}
+.bottom{
+    border-bottom: none;
+}
+.top{
+    border-top: none;
+}
+
+.noborder{
+    border:none;
+}
+
+.gameboard{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    right: 15%;
+    bottom: 15%;
+    background-color: rgb(0, 0, 0, 0.75);
+    z-index: 2;
+    overflow-x: hidden;
+    text-align: center;
+    color:white;
+}
+
+.border-gradient {
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width:5px;
+    border-image-source: linear-gradient(to left, #733ad500, #d53a9c00);
+    animation: border .5s .1s ease-in-out forwards;
+  }
+
+
+
+@keyframes border{
+    0%{
+        border-image-source: linear-gradient(to left, #733ad500, #d53a9c00);
+    }
+    20%{
+        border-image-source: linear-gradient(to left, #733ad520, #d53a9c20);
+    }
+    40%{
+        border-image-source: linear-gradient(to left, #733ad540, #d53a9c40);
+    }
+    60%{
+        border-image-source: linear-gradient(to left, #733ad560, #d53a9c60);
+    }
+    80%{
+        border-image-source: linear-gradient(to left, #733ad580, #d53a9c80);
+    }
+    100%{
+        border-image-source: linear-gradient(to left, #733ad5, #d53a9c);
+    }
+}
+
+#overlay-content{
+    background-color: rgb(0, 0, 0, 0.5);
+    text-align: center;
+    color:white;
+}
+h1{
+    font-size: 10vw;
+}
+  .cssbuttons-io {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 2vw;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    border: none;
+    background: -webkit-gradient(linear, left top, right top, from(#8e2de2), to(#4a00e0));
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: ghostwhite;
+    overflow: hidden;
+   }
+   
+   .cssbuttons-io svg {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+   }
+   
+   .cssbuttons-io span {
+    position: relative;
+    z-index: 10;
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0.8em 1.2em 0.8em 1.05em;
+   }
+   
+   .cssbuttons-io::before,
+   .cssbuttons-io::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+   .cssbuttons-io::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    -webkit-transform: skew(30deg);
+        -ms-transform: skew(30deg);
+            transform: skew(30deg);
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1), -webkit-transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+   }
+   
+   .cssbuttons-io:hover::before {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+   }
+   
+   .cssbuttons-io:active {
+    -webkit-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+            transform: scale(0.95);
+   }
+   
+
+@media screen and (max-width: 980px){
+    td {
+        width: 30vw;
+        height: 30vw;
+    }
+    .gameboard{
+        position: absolute;
+        left: 5vw;
+        right: auto;
+        top: 25%;
+        justify-content: center;
+        -webkit-transform: translate(0, 0%);
+        transform: translate(0%, 0%);
+    }
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 70%;
+        height: 20%;
+        top: 40%;
+        left: 15%;
+        right: 15%;
+        bottom: 40%;
+        background-color: rgb(0, 0, 0, 0.75);
+        z-index: 2;
+        overflow-x: hidden;
+        text-align: center;
+        color:white;
+    }
+    .cssbuttons-io {
+        position: relative;
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 4vw;
+        letter-spacing: 0.05em;
+        border-radius: 0.8em;
+        border: none;
+        background: -webkit-gradient(linear, left top, right top, from(#8e2de2), to(#4a00e0));
+        background: linear-gradient(to right, #8e2de2, #4a00e0);
+        color: ghostwhite;
+        overflow: hidden;
+       }
+}
